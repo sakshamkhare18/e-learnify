@@ -23,7 +23,7 @@ body {
     font-family: cursive;
     font-size: 20px;
     float: left;
-    color: white;
+    color: #442020;
     text-decoration: none;
     padding: 0.5rem 1rem;
     display: block;
@@ -38,7 +38,7 @@ body {
     max-height: 100px; /* Adjust logo size */
 }
 .container {
-    background-image: url("https://cdn.editage.com/insights/editagecom/production/background_0.jpg");
+    background-image: url("bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
