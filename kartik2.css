@@ -380,16 +380,18 @@ h2 {
     margin-bottom: 55px;
 }
 .img-phy{
+    width: 53%;
     border-radius: 10px;
-    height: 300px;
-    margin-left: 270px;
+    height: 70%;
+    margin-left: 25%;
     box-shadow: 10px 10px 25px grey;
 }
 .img-che{
-    width: 600px;
+    width: 53%;
+   
     border-radius: 10px;
-    height: 300px;
-    margin-left: 270px;
+    height: 70%;
+    margin-left: 25%;
     box-shadow: 10px 10px 25px grey;
 }
 .container6 {
