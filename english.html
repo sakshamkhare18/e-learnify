@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-lernify - English</title>
+    <style>
+        /* Basic reset and styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        header {
+            background-color: #011f3c;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            text-align: center;
+            background-color: #022547;
+            padding: 10px 0;
+            border-bottom: 1px solid #343a40;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #6c757d;
+        }
+        .lesson {
+            background-color: #f1f3f5;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lesson h2 {
+            color: #343a40;
+            font-size: 2rem;
+            margin-top: 0;
+            text-align: center;
+        }
+        .lesson p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .lesson img {
+          
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .lesson ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .lesson .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .lesson .cta-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul li a {
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
+            .lesson h2 {
+                font-size: 1.8rem;
+            }
+            .lesson p {
+                font-size: 1rem;
+            }
+        }
+        footer {
+    background-color: #181818;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding: 10px;
+    font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>class 12 English</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#grammar">The Last Lesson</a></li>
+            <li><a href="#writing"> Lost Spring </a></li>
+            <li><a href="#reading">Deep Water</a></li>
+            <li><a href="#vocabulary">the Rattrap</a></li>
+            <li><a href="#Indigo">Indigo</a></li>
+            <li><a href="#Poets">Poets And Pancakes</a></li>
+            <li><a href="#The Interview ">The Interview-Part I And Part II  </a></li>
+            <li><a href="#Going Places">Going Places  </a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="grammar" class="lesson">
+            <h2>The Last Lesson</h2>
+            <img src="https://i.ytimg.com/vi/YHOQD9ZzkF4/maxresdefault.jpg" alt="Grammar Basics">
+            <p>The 'Last Lesson' by Alphonse Daudet is mainly about the longing to learn the mother tongue and love for it.</p>
+            <ul>
+                <li>  writer:- Alphonse Daudet</li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+               
+            </ul>
+            <a href="lefl101.pdf" class="cta-button">book</a>
+            <a href="eng1.pdf" class="cta-button">notes</a>
+        </section>
+        <section id="writing" class="lesson">
+            <h2> Lost Spring </h2>
+            <img src="https://i.ytimg.com/vi/aG8Kq-wTV_k/maxresdefault.jpg" alt="Writing Skills">
+            <p>Develop effective writing techniques and enhance your ability to express ideas clearly.</p>
+            <ul>
+                <li>writer:- Anees Jung</li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl102.pdf" class="cta-button">book</a>
+            <a href="eng2.pdf" class="cta-button">notes</a>
+        </section>
+        <section id="reading" class="lesson">
+            <h2>Deep Water</h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-Deep-Water-by-William-Douglas-1366x550.png.webp"  alt="Reading Comprehension">
+            <p>Improve your reading skills and comprehension abilities with effective strategies.</p>
+            <ul>
+                <li>writer:-William Douglas </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl103.pdf" class="cta-button">book</a>
+            <a href="eng3.pdf" class="cta-button">notes</a>
+        </section>
+        <section id="vocabulary" class="lesson">
+            <h2>The Rattrap </h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/23Class-12-The-Rattrap-by-Selma-Lagerlof--1366x550.png.webp" alt="Vocabulary Building">
+            <p>Expand your vocabulary and improve your language fluency with advanced word knowledge.</p>
+            <ul>
+                <li>writer:- Selma Lagerlof </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl104.pdf" class="cta-button">book</a>
+            <a href="eng4.pdf" class="cta-button"> notes</a>
+        </section>
+        <section id="Indigo" class="lesson">
+            <h2>Indigo</h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-Indigo-by-Louis-Fischer-1366x550.png.webp" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>writer:- Louis Fischer </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl105.pdf" class="cta-button">book</a>
+            <a href="eng5.pdf" class="cta-button"> notes</a>
+        </section>
+        <section id="Poets" class="lesson">
+            <h2>Poets And Pancakes </h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-%E2%80%98Poets-and-Pancakes-Asokamitran-1-1366x550.webp" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>writer:- Asokamitran </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl106.pdf" class="cta-button">book</a>
+            <a href="#" class="cta-button"> notes</a>
+        </section>
+        <section id="The Interview" class="lesson">
+            <h2>The Interview-Part I And Part II </h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-Interview-Part-1-by-Christopher-Silvester-1-1366x550.png.webp" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>writer:- Christopher Silvester </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl107.pdf" class="cta-button">book</a>
+            <a href="#" class="cta-button"> notes</a>
+        </section>
+        <section id="Going Places" class="lesson">
+            <h2>Going Places </h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-Going-Places-by-A.R.-Barton-2-1366x550.png.webp" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>writer:- A. R. Barton </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl108.pdf" class="cta-button">book</a>
+            <a href="#" class="cta-button"> notes</a>
+        </section>
+        <section id="Going Places" class="lesson">
+            <h2>SUPPLYMENTRY</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAeD7YqVLFb5jGKiNAhJONFoDHNWdtLjw42A&s" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>all chapters </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl108.pdf" class="cta-button">enroll SUPPLYMENTRY</a>
+           
+        </section>
+        <section id="Going Places" class="lesson">
+            <h2>poetry</h2>
+            <img src="https://msroclassroom.com/wp-content/uploads/2024/02/Class-12-Going-Places-by-A.R.-Barton-2-1366x550.png.webp" alt="Public Speaking">
+            <p>Develop confidence and effective communication skills for speaking in front of an audience.</p>
+            <ul>
+                <li>all chapters </li>
+                <li>free book-pdf</li>
+                <li>free notes</li>
+            </ul>
+            <a href="lefl108.pdf" class="cta-button">enroll poetry</a>
+           
+        </section>
+      <!-- Add more sections as needed -->
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Our mission is to provide high-quality educational resources and support to students around the world. We aim to make learning accessible, engaging, and effective for everyone..</p>
+            </div>
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Email: e-Learnify@gmail.com</p>
+                <p>Phone: +91 9336061532</p>
+                <p>Address: 123 Street Name, City, Country</p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="physics.html">physics</a></li>
+                    <li><a href="chemisty.html">chemistry</a></li>
+                    <li><a href="math.html">math</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="twitter-icon.jpg" alt="Twitter"></a>
+                    <a href="#" class="social-icon"><img src="insta-icon.jpg" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="https://static.vecteezy.com/system/resources/previews/023/986/900/original/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

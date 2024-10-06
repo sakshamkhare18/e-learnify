@@ -3,89 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="kartik2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <title>e-Learnify.</title>
-    
-       
+    <title>e-lernify</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0242;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 4s ease-in-out;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none; /* Ensure no interaction with hidden loader */
+        }
+
+        .loader img {
+            width: 125px;
+            height: auto;
+            animation: spin 2s linear infinite;
+        }
+
+        /* @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        } */
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0b0242;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header img {
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('https://www.sediasystems.com/img/blog/12/beam-series-lecture-hall-university-classroom.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Feature Image Styles */
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .testimonial-content {
+            overflow: hidden;
+            padding-left: 80px;
+        }
+
+        .testimonial-content h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .testimonial-content p {
+            margin-bottom: 0;
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #ff5e62;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta a:hover {
+            background-color: #ff3a3e;
+        }
+
+        /* Footer */
+
+        footer {
+    background-color: #181818;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding: 10px;
+    font-size: 12px;
+        }
+     .feature h2 p{
+color: #181818;
+text-decoration: none;
+        }
+    </style>
+    <script>
+        // JavaScript to hide loading animation when page is fully loaded
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loader');
+            loader.classList.add('hidden'); // add 'hidden' class to fade out
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-    <nav class="navbar">
-        <img src="logo2.jpg.png" alt="Learnify.COM " class="logo"> <!-- Replace 'logo.png' with your logo image -->
-        <div>
-            <a href="index.html">Home</a>
-         
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="#page2.html">subject</a>
-        </div>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <img src="logo2.jpg.png" alt="Loading...">
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><img src="logo2.jpg.png" alt="Logo" class="logo"></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
 
-        <div class="hero">
-            <h2 class="animate__animated animate__slideInLeft" style="color: rgb(243, 243, 163);" >Your Gateway to Learning</h2>
-            <p style="font-family :cursive;" class="animate__animated animate__slideInRight">  At e-Learnify , we are here to support your learning journey.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to E-lernify</h1>
+            <p>Unlock your potential with our interactive learning platform.</p>
         </div>
     </div>
 
-    <div class="slider">
-        <div class="slides">
-            <div class="slide fade">
-                <img src="https://cdn.vectorstock.com/i/1000v/66/77/physics-round-blue-science-and-education-vector-21096677.jpg" alt="Image 1">
-                
-            </div>
-            <div class="slide fade">
-                <img src="https://img.freepik.com/free-vector/hand-drawn-chemistry-background_23-2148164901.jpg" alt="Image 2">
-            </div>
-            <div class="slide fade">
-                <img src="https://i.pinimg.com/736x/6c/2d/40/6c2d40e51b303afa827ba31f73b48223.jpg" alt="Image 3">
-            </div>
-            <!-- Add more slides as needed -->
+    <!-- Features Section -->
+    <section id="features" class="features">
+       
+        <div class="feature">
+           <a href="physics.html">
+            <img class="feature-img" src="https://t3.ftcdn.net/jpg/06/48/69/22/360_F_648692225_bVVZeubdKUTD9zmMYduovWhr8nFO5rsR.jpg" alt="Interactive Courses"></a>
+            <h2 style="text-decoration: none; color: #181818;text-underline-position: below;">12 PHYSICS</h2>
+            <p>Engaging courses designed to enhance your learning experience.</p>
+       
         </div>
       
-    </div>
-    <div class="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <!-- Add more dots as needed -->
-    </div>
-    <div id="page2.html">
-<div class="physics">
-<h1 style="margin-left: 10px; margin-bottom: 50px ; text-shadow: 5px 5px 5px gray; display: flex;
-justify-content: center; text-transform: uppercase;
-" >class 12 physics full sllyebus</h1>
-
- 
-<a href="physics.html"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240502160218/Physics.webp"class="img-phy"></a>
-
-
-</div>
-<div class="chemistry">
-    <h1 style="margin-left: 10px; margin-bottom: 50px ; text-shadow: 5px 5px 5px gray; display: flex;
-    justify-content: center; text-transform: uppercase;
-    " >class 12 chemistry full sllyebus</h1>
-    <a href="chemistry.html"><img src="https://images.shiksha.com/mediadata/images/articles/1680878615phpKfuhYh.jpeg"class="img-che"></a>
-
-    
-
-</div>
-    </div>
-    <div class="chemistry">
-        <h1 style="margin-left: 10px; margin-bottom: 50px ; text-shadow: 5px 5px 5px gray; display: flex;
-        justify-content: center; text-transform: uppercase;
-        " >class 12 math full sllyebus</h1>
-        <a href="math.html"><img src="https://i0.wp.com/kashmirreader.com/wp-content/uploads/2021/07/Mathematics-is-the-language.jpg?fit=520%2C255&ssl=1"class="img-che"></a>
-    
-        
-    
-    </div>
+        <div class="feature">
+            <a href="chemistry.html">
+            <img class="feature-img" src="https://img.freepik.com/free-vector/futuristic-science-lab-background_23-2148481928.jpg" alt="Expert Tutors">
+           </a> <h2>12 CHEMISTRY</h2>
+            <p>Let's experiment. We've got chemistry. This bond can't be broken. Let's get chemical.</p>
         </div>
-    <script src="scripts.js"></script>
+        <div class="feature">
+            <a href="math.html">
+           <img class="feature-img" src="https://img.freepik.com/free-vector/mathematical-geometric-background-vector-gradient-blue-education-remix_53876-114100.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721779200&semt=ais_user" alt="Community Support">
+           </a>  <h2>12 MATHEMATICS</h2>
+            <p>Make Math Matter with Real-World Tutoring.</p>
+        </div>
+        <div class="feature">
+            <a href="english.html">
+            <img class="feature-img" src="https://img.jagranjosh.com/imported/images/E/Articles/cbse-12th-english-core-revised-syllabus-2020-21-jagran-josh.jpg" alt="Mobile Accessibility">
+           </a> <h2>12 ENGLISH</h2>
+            <p>Empowering Expression, Enriching Minds: Discover English with Depth and Clarity.</p>
+        </div>
+        <div class="feature">
+            <img class="feature-img" src="https://www.shutterstock.com/shutterstock/videos/3442959863/thumb/4.jpg?ip=x480" alt="Progress Tracking">
+            <h2>12 HINDI</h2>
+            <p>Stay tuned for something amazing! ....</p>
+        </div>
+        <div class="feature">
+            <img class="feature-img" src="https://www.shutterstock.com/shutterstock/videos/3442959863/thumb/4.jpg?ip=x480" alt="Progress Tracking">
+            <h2>ENGLISH GRAMMAR</h2>
+            <p>Stay tuned for something amazing! ....</p>
+        </div>
+        <div class="feature">
+            <img class="feature-img" src="https://www.shutterstock.com/shutterstock/videos/3442959863/thumb/4.jpg?ip=x480" alt="Progress Tracking">
+            <h2>IMP MATH FORMULAS</h2>
+            <p>Stay tuned for something amazing! ....</p>
+        </div>
+        
+        <div class="feature"> <a href="about.html">
+            <img class="feature-img" src="https://st.depositphotos.com/1038076/4908/i/450/depositphotos_49080337-stock-photo-about-us.jpg" alt="Resources Library">
+           </a>
+            <h2>ABOUT US</h2>
+            <p> Figure Out Everything Your Page Will Include.</p>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="testimonial">
+            <img src="https://t3.ftcdn.net/jpg/04/75/43/42/360_F_475434218_H9iKI1g01Tf7DnGQKVUIaYLpKasHQg3m.jpg" alt="User Avatar">
+            <div class="testimonial-content">
+                <h3>up coming events</h3>
+                <p>"an extremely quick summary of an event that should hook potential attendees and capture interest for the event.comming soon!..."</p>
+            </div>
+        </div>
+        <div class="testimonial"><a href="services.html">
+            <img src="https://3ba1f5b2.rocketcdn.me/wp-content/uploads/2017/10/Difference-between-product-and-service-1.jpg" alt="User Avatar">
+        </a><div class="testimonial-content">
+                <h3>services</h3>
+                <p>" At e-Learnify , we are here to support your learning journey."</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Ready to take your learning to the next level?</h2>
+        <p>know about our website  features.</p>
+        <a href="login.php">login</a>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
